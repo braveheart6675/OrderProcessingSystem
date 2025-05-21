@@ -1,0 +1,11 @@
+services:
+  order-api:
+    build:
+      context: .
+      dockerfile: src/OrderProcessingSystem.API/Dockerfile
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=OrderDb;User=sa;Password=Your_password123;
+    
